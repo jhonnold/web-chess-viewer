@@ -1,11 +1,10 @@
 {
-    "name": "react-minimal-boilerplate",
+    "name": "web-chess-viewer",
     "version": "1.0.0",
-    "description": "Minimal React Boilerplate",
-    "main": "index.js",
+    "description": "Web-based chess viewer for tournament broadcasts",
     "scripts": {
         "start": "webpack serve --config config/webpack.dev.js",
-        "build": "NODE_ENV=production webpack --config config/webpack.prod.js",
+        "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js",
         "format": "prettier --write src",
         "test": "jest --detectOpenHandles --colors --verbose src"
     },
@@ -33,6 +32,7 @@
         "autoprefixer": "^10.4.8",
         "babel-loader": "^8.2.5",
         "clean-webpack-plugin": "^4.0.0",
+        "cross-env": "^7.0.3",
         "css-loader": "^6.7.1",
         "css-minimizer-webpack-plugin": "^4.0.0",
         "eslint": "^8.21.0",

@@ -45,13 +45,12 @@ module.exports = {
                 test: /\.css$/i,
                 exclude: /node_modules/,
                 use: [
-                    { loader: MiniCssExtractPlugin.loader },
+                    isDevelopment ? { loader: 'style-loader' } : MiniCssExtractPlugin.loader,
                     { loader: 'css-loader' },
                     {
                         loader: 'postcss-loader',
                         options: {
                             postcssOptions: {
-                                ident: 'postcss',
                                 plugins: [tailwindcss, autoprefixer],
                             },
                         },
@@ -63,10 +62,6 @@ module.exports = {
     plugins: [
         new webpack.ProgressPlugin(),
         new CleanWebpackPlugin(),
-        new MiniCssExtractPlugin({
-            filename: '[name].[contenthash].css',
-            chunkFilename: '[id].[contenthash].css',
-        }),
         new HtmlWebpackPlugin({
             title: 'React-Minimal-Boilerplate',
             template: paths.public + '/index.html',
