@@ -3,7 +3,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ReactRefreshTypeScript = require('react-refresh-typescript');
 const webpack = require('webpack');
-const tailwindcss = require('tailwindcss');
 const autoprefixer = require('autoprefixer');
 
 const paths = require('./paths');
@@ -51,7 +50,7 @@ module.exports = {
                         loader: 'postcss-loader',
                         options: {
                             postcssOptions: {
-                                plugins: [tailwindcss, autoprefixer],
+                                plugins: [autoprefixer],
                             },
                         },
                     },

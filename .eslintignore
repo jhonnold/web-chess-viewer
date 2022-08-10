@@ -1,5 +1,4 @@
 config
 node_modules
 public
-tailwind.config.js
 jest.config.js
